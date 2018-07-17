@@ -34,6 +34,7 @@ import static org.junit.Assert.assertEquals;
 
 public final class TestUtils {
 
+    public static final String CRD_TOPIC = "../examples/install/topic-operator/01-crd-topic.yaml";
     private static final Logger LOGGER = LogManager.getLogger(TestUtils.class);
 
     private TestUtils() {
