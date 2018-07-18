@@ -101,7 +101,7 @@ public class Kafka extends ReplicatedJvmPods {
     @Description("Logging configuration for Kafka")
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
     public Logging getLogging() {
-        return logging;
+        return logging == null ? new InlineLogging() : logging;
     }
 
     public void setLogging(Logging logging) {
