@@ -14,12 +14,15 @@ import io.strimzi.crdgenerator.annotations.Pattern;
 import io.strimzi.crdgenerator.annotations.Type;
 import io.sundr.builder.annotations.Buildable;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
-public class CpuMemory {
+public class CpuMemory implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String memory;
     private String milliCpu;
