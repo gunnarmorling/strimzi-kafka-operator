@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-@JsonInclude(JsonInclude.Include.NON_DEFAULT)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CpuMemory implements Serializable {
 
     private static final long serialVersionUID = 1L;
