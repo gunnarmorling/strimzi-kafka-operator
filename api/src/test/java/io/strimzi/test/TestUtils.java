@@ -42,7 +42,7 @@ public final class TestUtils {
 
     public static final String CRD_KAFKA_CONNECT_S2I = "../examples/install/cluster-operator/04-Crd-kafkaconnects2i.yaml";
 
-    public static final String CRD_TOPIC = "../examples/install/topic-operator/01-Crd-kafkatopic.yaml";
+    public static final String CRD_TOPIC = "../examples/install/topic-operator/04-Crd-kafkatopic.yaml";
 
     private TestUtils() {
         // All static methods
