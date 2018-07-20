@@ -34,18 +34,19 @@ import static org.junit.Assert.assertEquals;
 
 public final class TestUtils {
 
-    public static final String CRD_TOPIC = "../examples/install/topic-operator/01-Crd-kafkatopic.yaml";
     private static final Logger LOGGER = LogManager.getLogger(TestUtils.class);
+
+    public static final String CRD_KAFKA = "../examples/install/cluster-operator/04-Crd-kafka.yaml";
+
+    public static final String CRD_KAFKA_CONNECT = "../examples/install/cluster-operator/04-Crd-kafkaconnect.yaml";
+
+    public static final String CRD_KAFKA_CONNECT_S2I = "../examples/install/cluster-operator/04-Crd-kafkaconnects2i.yaml";
+
+    public static final String CRD_TOPIC = "../examples/install/topic-operator/01-Crd-kafkatopic.yaml";
 
     private TestUtils() {
         // All static methods
     }
-
-    public static final String KAFKA_CRD = "../examples/install/cluster-operator/04-Crd-kafka.yaml";
-
-    public static final String KAFKA_CONNECT_CRD = "../examples/install/cluster-operator/04-Crd-kafkaconnect.yaml";
-
-    public static final String KAFKA_CONNECT_S2I_CRD = "../examples/install/cluster-operator/04-Crd-kafkaconnects2i.yaml";
 
     /** Returns a Map of the given sequence of key, value pairs. */
     public static <T> Map<T, T> map(T... pairs) {
