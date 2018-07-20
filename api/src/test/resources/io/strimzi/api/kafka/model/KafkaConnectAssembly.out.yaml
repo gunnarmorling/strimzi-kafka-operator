@@ -20,3 +20,6 @@ spec:
     value: "value2"
   config:
     name: "bar"
+  logging:
+    type: "inline"
+    loggers: {}
