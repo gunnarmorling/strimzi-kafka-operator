@@ -18,7 +18,11 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-
+@Buildable(
+        editableEnabled = false,
+        generateBuilderPackage = true,
+        builderPackage = "io.strimzi.api.kafka.model"
+)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CpuMemory implements Serializable {
 
@@ -27,19 +31,6 @@ public class CpuMemory implements Serializable {
     private String memory;
     private String milliCpu;
     private Map<String, Object> additionalProperties = new HashMap<>(0);
-
-    @Buildable(
-            editableEnabled = false,
-            generateBuilderPackage = true,
-            builderPackage = "io.strimzi.api.kafka.model"
-    )
-    public CpuMemory() {
-    }
-
-    public CpuMemory(long mem, int milliCpu) {
-        this.memory = MemoryDeserializer.format(mem);
-        this.milliCpu = MilliCpuDeserializer.format(milliCpu);
-    }
 
     /** The memory in bytes */
     @JsonIgnore
