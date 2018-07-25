@@ -72,7 +72,7 @@ public class StrimziRunner extends BlockJUnit4ClassRunner {
     public static final String KAFKA_CONNECT_YAML = "../examples/kafka-connect/kafka-connect.yaml";
     public static final String CO_INSTALL_DIR = "../examples/install/cluster-operator";
     public static final String CO_DEPLOYMENT_NAME = "strimzi-cluster-operator";
-    public static final String TOPIC_CM = "../examples/configmaps/topic-operator/kafka-topic-configmap.yaml";
+    public static final String TOPIC_CM = "../examples/topic/kafka-topic.yaml";
 
     private KubeClusterResource clusterResource;
 
