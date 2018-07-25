@@ -16,6 +16,7 @@ import io.fabric8.kubernetes.internal.KubernetesDeserializer;
 import io.strimzi.api.kafka.model.KafkaAssembly;
 import io.strimzi.api.kafka.model.KafkaConnectAssembly;
 import io.strimzi.api.kafka.model.KafkaConnectS2IAssembly;
+import io.strimzi.api.kafka.model.KafkaUser;
 
 /**
  * "Static" information about the CRDs defined in this package
@@ -75,6 +76,14 @@ public class Crds {
             listKind = KafkaConnectS2IAssembly.RESOURCE_LIST_KIND;
             group = KafkaConnectS2IAssembly.RESOURCE_GROUP;
             version = KafkaConnectS2IAssembly.VERSION;
+        } else if (cls.equals(KafkaUser.class)) {
+            kind = KafkaUser.RESOURCE_KIND;
+            crdApiVersion = KafkaUser.CRD_API_VERSION;
+            plural = KafkaUser.RESOURCE_PLURAL;
+            singular = KafkaUser.RESOURCE_SINGULAR;
+            listKind = KafkaUser.RESOURCE_LIST_KIND;
+            group = KafkaUser.RESOURCE_GROUP;
+            version = KafkaUser.VERSION;
         } else {
             throw new RuntimeException();
         }
@@ -120,6 +129,14 @@ public class Crds {
 
     public static <D extends CustomResourceDoneable<T>, T extends CustomResource> MixedOperation<KafkaConnectS2IAssembly, KafkaConnectS2IAssemblyList, DoneableKafkaConnectS2IAssembly, Resource<KafkaConnectS2IAssembly, DoneableKafkaConnectS2IAssembly>> kafkaConnectS2iOperation(KubernetesClient client) {
         return client.customResources(Crds.kafkaConnectS2I(), KafkaConnectS2IAssembly.class, KafkaConnectS2IAssemblyList.class, DoneableKafkaConnectS2IAssembly.class);
+    }
+
+    public static CustomResourceDefinition kafkaUser() {
+        return crd(KafkaUser.class);
+    }
+
+    public static MixedOperation<KafkaUser, KafkaUserList, DoneableKafkaUser, Resource<KafkaUser, DoneableKafkaUser>> kafkaUserOperation(KubernetesClient client) {
+        return client.customResources(kafkaUser(), KafkaUser.class, KafkaUserList.class, DoneableKafkaUser.class);
     }
 
     public static <T extends CustomResource, L extends CustomResourceList<T>, D extends CustomResourceDoneable<T>> MixedOperation<T, L, D, Resource<T, D>>
