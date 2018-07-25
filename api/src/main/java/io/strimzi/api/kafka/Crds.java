@@ -84,6 +84,7 @@ public class Crds {
             listKind = KafkaUser.RESOURCE_LIST_KIND;
             group = KafkaUser.RESOURCE_GROUP;
             version = KafkaUser.VERSION;
+            shortNames = new String[] {KafkaUser.SHORT_NAME};
         } else {
             throw new RuntimeException();
         }
